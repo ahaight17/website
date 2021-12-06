@@ -1,18 +1,24 @@
 import { Loader } from '@googlemaps/js-api-loader';
 import VerticalDivider from 'components/aesthetic/VerticalDivider';
+import EventsList from 'components/EventsList';
+import Loading from 'components/utils/Loading';
+import RotatingCube from 'components/utils/RotatingCube';
+import Geohash from 'latlon-geohash';
 import { useEffect, useState } from 'react'
 import '../components/buttons/buttons.css'
 import './pages.css'
 
 export default function EventGenerator(){
-  const loader = new Loader({
-    apiKey: process.env.REACT_APP_GCP_API_KEY,
-    version: "weekly",
-    libraries: ["places"]
-  });
 
   const [location, setLocation] = useState([]);
   const [lName, setLName] = useState(undefined);
+  const [events, setEvents] = useState([]);
+
+  const loader = new Loader({
+    apiKey: 'AIzaSyCISWowvm7A8a1VFaXxpfGGzwzm1rnf1fY',
+    version: "weekly",
+    libraries: ["places"]
+  });
 
   loader.load().then((google) => {
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -23,10 +29,6 @@ export default function EventGenerator(){
 
     const input = document.getElementById("pac-input");
     const searchBox = new google.maps.places.SearchBox(input);
-
-    // map.addListener('bounds_changed', (e) => {
-    //   console.log(e)
-    // })
 
     searchBox.addListener('places_changed', () => {
       const places = searchBox.getPlaces();
@@ -39,6 +41,18 @@ export default function EventGenerator(){
     console.error(e);
   })
 
+  const fetchEvents = (hash) => {
+    return(new Promise((resolve, reject) => {
+      fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=100&apikey=z5X8HXEWdl1cJyXAvTTWZbvsKtGchXq1&geoPoint=${hash}&sort=date,desc`).then((res) => {
+        const data = res.json()
+        if(res.ok) resolve(data)
+        reject(data)
+      }).catch((e) => {
+        reject(e)
+      })
+    }))
+  }
+
   useEffect(() => {
     if(navigator.geolocation){
       navigator.geolocation.getCurrentPosition((position) => {
@@ -46,6 +60,17 @@ export default function EventGenerator(){
       })
     }
   }, [])
+
+  useEffect(() => {
+    if(location.length !== 0){
+      let newHash = Geohash.encode(location[0], location[1], 5)
+
+      fetchEvents(newHash).then((events) => {
+        setEvents(events._embedded.events)
+      })
+
+    }
+  }, [location])
 
   return(
     <>
@@ -57,10 +82,17 @@ export default function EventGenerator(){
             type="text"
             placeholder="Search Box"
           />
+          { location.length === 0 && 
+            <div className="map-loader">
+              <RotatingCube />
+              <h1>Initializing map...</h1>
+            </div>
+          }
           <div id="map" />
-          <VerticalDivider height={'77vh'} />
-          <div className="events-list">
+          <VerticalDivider height={'81vh'} />
+          <div className="events-panel flex-container-column">
             <h1>Events List</h1>
+            <EventsList events={events} />
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@
 
 .event-generator>div{
   position: relative;
-  height: 75vh;
+  height: 80vh;
   gap: 10px;
   padding: 25px;
 }
@@ -24,7 +24,36 @@
   height: 100%;
 }
 
-.event-generator .events-list{
+.event-generator .events-panel{
   flex: 1;
   height: 100%;
+}
+.event-generator .events-panel>h1{
+  margin-top: 0;
+}
+
+.events-panel>.events-list{
+  overflow-y: scroll;
+  gap: 10px;
+}
+
+.event-item>img{
+  border-radius: 0.25em;
+}
+
+.event-generator .map-loader{
+  position: absolute;
+  z-index: 1;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.lights-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
