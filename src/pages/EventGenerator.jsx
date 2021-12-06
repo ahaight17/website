@@ -63,8 +63,6 @@ export default function EventGenerator(){
             <h1>Events List</h1>
           </div>
         </div>
-        {/* Button from https://codepen.io/ahart814/pen/yLNMZGa */}
-        {/* <button className="find-events">Find Events</button> */}
       </div>
     </>
   )
