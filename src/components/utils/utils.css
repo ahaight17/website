@@ -1,0 +1,62 @@
+.cube-wrapper{
+  width: 100%;
+  perspective: 800;
+  padding-top: 5%;
+}
+
+/***************
+CODE FROM LINE 9 TO LINE 66 IS FROM https://codepen.io/rauldronca/details/qNPPXA
+****************/
+.cube{
+  position: relative;
+  top: calc(50% - 100px);
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+
+  animation: spin 5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0) rotateX(0); }
+  to { transform: rotateY(-360deg) rotateX(360deg); }
+}
+
+.cube > div{
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #333;
+  opacity: .8;
+}
+
+.one { 
+  transform: rotateX(90deg) translateZ(100px); 
+  background-color: #031d44;
+}
+
+.two { 
+  transform: translateZ(100px); 
+  background-color: #dab785;
+}
+
+.three { 
+  transform: rotateY(90deg) translateZ(100px); 
+  background-color: #70a288;
+}
+
+.four { 
+  transform: rotateY(180deg) translateZ(100px); 
+  background-color: #dab785;
+}
+
+.five { 
+  transform: rotateY(-90deg) translateZ(100px); 
+  background-color: #d5896f;
+}
+
+.six { 
+  transform: rotateX(-90deg) translateZ(100px); 
+  background-color: #04395e;
+}

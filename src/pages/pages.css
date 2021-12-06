@@ -1,0 +1,30 @@
+.event-generator>#location-title{
+  text-align: center;
+  font-size: 35pt;
+}
+
+.event-generator>div{
+  position: relative;
+  height: 75vh;
+  gap: 10px;
+  padding: 25px;
+}
+
+.event-generator #pac-input{
+  position: absolute;
+  z-index: 1;
+  top: 35px;
+  left: 15vw;
+  width: 25vw;
+}
+
+.event-generator #map{
+  flex: 1;
+  border-radius: 0.5rem;
+  height: 100%;
+}
+
+.event-generator .events-list{
+  flex: 1;
+  height: 100%;
+}

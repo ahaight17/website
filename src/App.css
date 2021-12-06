@@ -1,0 +1,73 @@
+:root{
+  --color1: #031d44;
+  --color2: #04395e;
+  --color3: #70a288;
+  --color4: #dab785;
+  --color5: #d5896f;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.color-1{
+  background-color: var(--color1);
+}
+
+.color-2{
+  background-color: var(--color2);
+}
+
+.color-3{
+  background-color: var(--color3);
+}
+
+.color-4{
+  background-color: var(--color4);
+}
+
+.color-5{
+  background-color: var(--color5);
+}
+
+.flex-container-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.fit-page{
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.relative-position{
+  position: relative;
+}
+
+#coming-soon-banner{
+  margin: 0;
+  padding-top: 10%;
+  text-align: center;
+  font-size: 75px;
+}

@@ -1,0 +1,23 @@
+.vertical-divider{
+  border: 1px solid var(--color1);
+  width: 0px;
+  opacity: 0.5;
+}
+
+.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer>div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.footer img{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.25;
+}
