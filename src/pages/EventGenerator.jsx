@@ -3,6 +3,7 @@ import VerticalDivider from 'components/aesthetic/VerticalDivider';
 import EventsList from 'components/EventsList';
 import Loading from 'components/utils/Loading';
 import RotatingCube from 'components/utils/RotatingCube';
+import { makeQueryParams } from 'hooks/makeQueryParams';
 import Geohash from 'latlon-geohash';
 import { useEffect, useState } from 'react'
 import '../components/buttons/buttons.css'
@@ -15,7 +16,7 @@ export default function EventGenerator(){
   const [events, setEvents] = useState([]);
 
   const loader = new Loader({
-    apiKey: 'AIzaSyCISWowvm7A8a1VFaXxpfGGzwzm1rnf1fY',
+    apiKey: process.env.REACT_APP_GCP_API_KEY,
     version: "weekly",
     libraries: ["places"]
   });
@@ -42,8 +43,17 @@ export default function EventGenerator(){
   })
 
   const fetchEvents = (hash) => {
+    let date = new Date().toISOString()
+    let qParams = makeQueryParams({
+      apikey: process.env.REACT_APP_TM_API_KEY,
+      size: 150,
+      geoPoint: hash,
+      sort: 'distance,date,asc',
+      startDateTime: `${date.slice(0, date.length-5)}Z`
+    })
+
     return(new Promise((resolve, reject) => {
-      fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=100&apikey=z5X8HXEWdl1cJyXAvTTWZbvsKtGchXq1&geoPoint=${hash}&sort=date,desc`).then((res) => {
+      fetch(`https://app.ticketmaster.com/discovery/v2/events.json?${qParams}`).then((res) => {
         const data = res.json()
         if(res.ok) resolve(data)
         reject(data)
@@ -82,7 +92,7 @@ export default function EventGenerator(){
             type="text"
             placeholder="Search Box"
           />
-          { location.length === 0 && 
+          { location.length !== 0 && 
             <div className="map-loader">
               <RotatingCube />
               <h1>Initializing map...</h1>

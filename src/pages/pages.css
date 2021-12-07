@@ -14,7 +14,7 @@
   position: absolute;
   z-index: 1;
   top: 35px;
-  left: 15vw;
+  left: 12vw;
   width: 25vw;
 }
 
@@ -34,17 +34,69 @@
 
 .events-panel>.events-list{
   overflow-y: scroll;
+  overflow-x: hidden;
   gap: 10px;
+}
+
+.events-list>a{
+  all: unset;
+}
+
+.event-item{
+  align-items: center;
+  gap: 15px; 
+  padding: 15px;
+  border-radius: 0.5rem;
+  margin-right: 1%;
+}
+
+.event-item:hover{
+  background-color: RGBA(4, 57, 94, 0.25)
+}
+
+.event-item .event-time{
+  height: 100%;
+  flex: 1;
+}
+
+.event-item .event-time>#date{
+  font-weight: bold;
+}
+
+.event-item .event-time>p, .event-item .event-info>p{
+  margin: 0;
+  text-align: justify;
+  width: 100%;
+}
+
+.event-item .event-time>#multi{
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  font-size: larger;
 }
 
 .event-item>img{
   border-radius: 0.25em;
+  max-height: 58.5px;
+  max-width: 104px;
+  flex: 1;
+}
+
+.event-item .event-info{
+  flex: 6;
+}
+
+.event-item .event-info>#name{
+  font-weight: bold;
+  font-size: large;
 }
 
 .event-generator .map-loader{
   position: absolute;
   z-index: 1;
-  left: 20vw;
+  left: 0vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   gap: 50px;

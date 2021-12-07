@@ -4,6 +4,12 @@
   opacity: 0.5;
 }
 
+.horizontal-divider{
+  border: 1px solid var(--color1);
+  width: 0px;
+  opacity: 0.5;
+}
+
 .footer{
   width: 100%;
   position: absolute;
