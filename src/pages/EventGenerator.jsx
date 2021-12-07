@@ -92,7 +92,7 @@ export default function EventGenerator(){
             type="text"
             placeholder="Search Box"
           />
-          { location.length !== 0 && 
+          { location.length === 0 && 
             <div className="map-loader">
               <RotatingCube />
               <h1>Initializing map...</h1>
