@@ -12,8 +12,8 @@ export default function Footer(){
           <a href="https://www.linkedin.com/in/alexhaight/">
             <img src="/assets/logos/linkedin.png" alt="linkedin logo"/>
           </a>
-          <VerticalDivider height={'2rem'}/>
-          <a href="/event-generator">Event Generator</a>
+          {/* <VerticalDivider height={'2rem'}/>
+          <a href="/event-generator">Event Generator</a> */}
         </div>
       </div>
     </>

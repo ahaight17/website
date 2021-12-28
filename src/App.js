@@ -8,9 +8,9 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/event-generator">
+        {/* <Route path="/event-generator">
           <EventGenerator />
-        </Route>
+        </Route> */}
         <Route path="/">
           <Home />
           {/* <LightShow /> */}

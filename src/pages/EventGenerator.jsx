@@ -1,12 +1,10 @@
 import { Loader } from '@googlemaps/js-api-loader';
 import VerticalDivider from 'components/aesthetic/VerticalDivider';
 import EventsList from 'components/EventsList';
-import Loading from 'components/utils/Loading';
 import RotatingCube from 'components/utils/RotatingCube';
 import { makeQueryParams } from 'hooks/makeQueryParams';
 import Geohash from 'latlon-geohash';
 import { useEffect, useState } from 'react'
-import '../components/buttons/buttons.css'
 import './pages.css'
 
 export default function EventGenerator(){

@@ -11,7 +11,6 @@ export default function EventsList(props){
 }
 
 function EventListItem(props){
-  console.log(props.event)
   let startTime = props.event.dates.start.dateTime === undefined ? new Date(props.event.dates.start.localDate) : new Date(props.event.dates.start.dateTime)
   let date = startTime.toDateString().split(' ');
   let time = startTime.toTimeString().split(' ')[0].split(':');
