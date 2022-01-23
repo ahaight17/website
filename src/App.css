@@ -33,6 +33,26 @@ body{
   background-color: var(--color5);
 }
 
+.text-color-1{
+  color: var(--color1);
+}
+
+.text-color-2{
+  color: var(--color2);
+}
+
+.text-color-3{
+  color: var(--color3);
+}
+
+.text-color-4{
+  color: var(--color4);
+}
+
+.text-color-5{
+  color: var(--color5);
+}
+
 .flex-container-row{
   display: flex;
   flex-direction: row;
