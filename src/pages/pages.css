@@ -145,3 +145,19 @@
   font-size: 12px;
   max-width: unset;
 }
+
+.word-letter{
+  content: 'T';
+  width: 5rem;
+  height: 5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  user-select: none;
+}

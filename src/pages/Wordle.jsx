@@ -18,7 +18,7 @@ export default function Wordle(){
             <div className="my-2 grid grid-cols-5 h-full justify-items-center gap-2 word-group" data-index={i}>
               {
                 Array.apply(null, Array(WORDLENGTH)).map((_, i) => (
-                  <div className="border-gray-700 border-solid border-2 h-36 w-36 rounded-md word-letter" data-index={i}></div>
+                  <div className="border-gray-700 border-solid border-2 rounded-md word-letter" data-index={i}>A</div>
                 ))
               }
             </div>
