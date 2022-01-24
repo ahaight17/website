@@ -109,3 +109,39 @@
   flex-wrap: wrap;
   gap: 5px;
 }
+
+.keyboard{
+  height: 200px;
+}
+
+.key-row{
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.key-button{
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 58px;
+  width: 58px;
+  max-width: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.key-button.one-and-a-half{
+  flex: 1.5;
+  font-size: 12px;
+  max-width: unset;
+}
