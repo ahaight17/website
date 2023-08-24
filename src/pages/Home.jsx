@@ -1,7 +1,8 @@
 import Footer from "components/aesthetic/Footer";
 import { callApiWithEndpoint } from "helper/callApiWithEndpoint";
 import { useEffect, useState } from "react";
-import  folder  from 'assets/folder.png'
+import folder from 'assets/folder.png'
+import Loading from "components/aesthetic/Loading";
 
 export default function Home(){
   const [fileTree, setFileTree] = useState(undefined)
@@ -40,7 +41,7 @@ export default function Home(){
             return (
               <div className="content-box">
                 <div className="flex-container-row center">
-                  <img className="folder-img" src={folder}/>
+                  <img className="folder-img img-default" src={folder}/>
                   <h1 className="folder-name">{file.name}</h1>  
                 </div>
               </div>
@@ -48,7 +49,7 @@ export default function Home(){
           })
         ) :
         (
-          <></>
+          <Loading />
         ) 
         }
       </div>

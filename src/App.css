@@ -95,6 +95,11 @@ body{
   position: relative;
 }
 
+.img-default{
+  width: auto;
+  height: auto;
+}
+
 .content-box{
   max-width: 400px;
   max-height: 400px;
@@ -104,11 +109,9 @@ body{
 
 .folder-name{
   text-align: center;
-  vertical-align: middle;
+  font-size: 32px;
 }
 
 .folder-img{
   padding-right: 8px;
-  width: auto;
-  height: auto;
 }
