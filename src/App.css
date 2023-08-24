@@ -1,6 +1,10 @@
 @font-face {
   font-family: "Hackbot";
   src: url('/src/fonts/hackbot.otf');
+  src: url('/src/fonts/hackbot.otf') format('embedded-opentype'),
+       url('/src/fonts/hackbot.otf') format('woff2'),
+       url('/src/fonts/hackbot.otf') format('woff'),
+       url('/src/fonts/hackbot.otf') format('truetype');
 }
 
 :root{
