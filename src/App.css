@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Hackbot";
+  src: url('/src/fonts/hackbot.otf');
+}
+
 :root{
   --color1: #031d44;
   --color2: #04395e;
@@ -7,10 +12,11 @@
 }
 
 body{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Hackbot", serif;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
+  margin: 0%;
 }
 
 .color-1{
@@ -85,9 +91,20 @@ body{
   position: relative;
 }
 
-#coming-soon-banner{
-  margin: 0;
-  padding-top: 10%;
+.content-box{
+  max-width: 400px;
+  max-height: 400px;
+  padding: 20px;
+  display: flex;
+}
+
+.folder-name{
   text-align: center;
-  font-size: 75px;
+  vertical-align: middle;
+}
+
+.folder-img{
+  padding-right: 8px;
+  width: auto;
+  height: auto;
 }
