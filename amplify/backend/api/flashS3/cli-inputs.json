@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/listObjects": {
+      "name": "/listObjects",
+      "lambdaFunction": "listObjects",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
