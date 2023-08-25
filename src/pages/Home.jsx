@@ -1,7 +1,6 @@
 import Footer from "components/aesthetic/Footer";
 import { callApiWithEndpoint } from "helper/callApiWithEndpoint";
 import { useEffect, useState } from "react";
-import folder from 'assets/folder.png'
 import Loading from "components/aesthetic/Loading";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Error from "./Error";
