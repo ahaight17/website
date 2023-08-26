@@ -142,3 +142,11 @@ body{
   justify-content: space-evenly;
   align-content: center;
 }
+
+.header{
+  justify-content: start;
+  align-items: center;
+  padding-left: 15px;
+  position: absolute;
+  top: 0;
+}

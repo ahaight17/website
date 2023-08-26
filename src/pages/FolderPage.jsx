@@ -6,7 +6,7 @@ export default function FolderPage(props){
     const location = useLocation()
 
     const handleFolderClick = (e) => {
-      const folderName = e.target.parentElement.outerText
+      const folderName = e.target.parentElement.outerText.trim()
       const compositePathname = location.pathname === "/" ? `${location.pathname}${folderName}` : `${location.pathname}/${folderName}`
   
       navigate(compositePathname)
@@ -23,8 +23,8 @@ export default function FolderPage(props){
         Object.keys(props.currentChildren).map((objectName) => (
         <div className="content-box">
             <div className="flex-container-row center" onClick={handleFolderClick}>
-            <img className="folder-img img-default" src={folder}/>
-            <h1 className="folder-name">{objectName}</h1>
+              <img className="folder-img img-default" src={folder}/>
+              <h1 className="folder-name">{objectName}</h1>
             </div>
         </div>
         ))
