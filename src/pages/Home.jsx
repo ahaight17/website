@@ -47,9 +47,13 @@ export default function Home(){
           tree = tree[path]
         }
       })
-      setIsValidPath(tree !== undefined)
-      setCurrentChildren(tree)
-      setIsFolderSet(Object.keys(Object.values(tree)[0]).length > 0)
+      if(tree === undefined){
+        setIsValidPath(false)
+      } else {
+        setIsValidPath(true)
+        setCurrentChildren(tree)
+        setIsFolderSet(Object.keys(Object.values(tree)[0]).length > 0)
+      }
     }
   }
 

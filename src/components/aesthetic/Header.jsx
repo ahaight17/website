@@ -8,7 +8,9 @@ export default function Header(props){
     const [showBackButton, setShowBackButton] = useState(false)
 
     const handleBackButtonClick = () => {
-        navigate(-1)
+        var paths = location.pathname.split("/")
+        paths.pop()
+        navigate(paths.join("/"))
     }
 
     useEffect(() => {
