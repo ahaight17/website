@@ -1,10 +1,6 @@
 @font-face {
-  font-family: "Hackbot";
-  src: url('/src/fonts/hackbot.otf');
-  src: url('/src/fonts/hackbot.otf') format('embedded-opentype'),
-       url('/src/fonts/hackbot.otf') format('woff2'),
-       url('/src/fonts/hackbot.otf') format('woff'),
-       url('/src/fonts/hackbot.otf') format('truetype');
+  font-family: 'Hackbot';
+  src: url('/src/fonts/hackbot.otf') format('opentype');
 }
 
 :root{
@@ -16,7 +12,7 @@
 }
 
 body{
-  font-family: serif;
+  font-family: "Hackbot";
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
@@ -136,6 +132,7 @@ body{
 .content-page{
   min-height: 90vh;
   flex-wrap: wrap;
+  padding: 40px;
 }
 
 .folder-page{
@@ -146,7 +143,11 @@ body{
 .header{
   justify-content: start;
   align-items: center;
-  padding-left: 15px;
+  padding: 15px;
   position: absolute;
   top: 0;
+}
+
+.header p{
+  margin: 0;
 }
