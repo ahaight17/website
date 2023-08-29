@@ -4,11 +4,13 @@
 }
 
 :root{
-  --color1: #031d44;
-  --color2: #04395e;
+  --color1: #BBBDF6;
+  --color2: #F9CB40;
   --color3: #70a288;
-  --color4: #dab785;
-  --color5: #d5896f;
+  --color4: #8B5D33;
+  --color5: #246EB9;
+  --color6: #FC7A57;
+  --color7: #FBFBFF
 }
 
 body{
@@ -19,24 +21,8 @@ body{
   margin: 0%;
 }
 
-.color-1{
-  background-color: var(--color1);
-}
-
-.color-2{
-  background-color: var(--color2);
-}
-
-.color-3{
-  background-color: var(--color3);
-}
-
-.color-4{
+.color-default{
   background-color: var(--color4);
-}
-
-.color-5{
-  background-color: var(--color5);
 }
 
 .text-color-1{
