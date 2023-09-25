@@ -109,10 +109,12 @@ body{
 .folder-name{
   text-align: center;
   font-size: 32px;
+  cursor: pointer;
 }
 
 .folder-img{
   padding-right: 8px;
+  cursor: pointer;
 }
 
 .content-page{
