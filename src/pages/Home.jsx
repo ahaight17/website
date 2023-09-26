@@ -11,16 +11,24 @@ import Header from "components/aesthetic/Header";
 export default function Home(){
   const params = useParams()
   const location = useLocation()
-  const [fileTree, setFileTree] = useState(undefined)
+  const [loading, setLoading] = useState(true);
   const [currentChildren, setCurrentChildren] = useState({})
   const [isValidPath, setIsValidPath] = useState(true)
   const [isFolderSet, setIsFolderSet] = useState(true)
   const [bodyColor, setBodyColor] = useState(1)
 
-  const getAllObjects = async () => {
-    let res = await callApiWithEndpoint('/listObjects')
-    let result = {};
+  const updateTreeWithLocation = async () => {
+    const subroutes = location.pathname.split("/")
+    const query = subroutes
+    query.shift()
+    let res = await callApiWithEndpoint(`/listObjects?path=${query.join("/")}`)
+    if(res.Contents === undefined){
+      setIsValidPath(false)
+      return
+    }
 
+    // form better data structure to work with idk
+    let result = {};
     res.Contents.forEach(path => {
       path.Key.split('/').reduce((r, name) => {
         if(!r[name]){
@@ -29,41 +37,32 @@ export default function Home(){
         return r[name]
       }, result)
     })
+    // console.log(result)
 
-    setCurrentChildren(result)
-    setFileTree(result)
-    if(result[params["*"]] === undefined && params["*"] !== ""){
-      setIsValidPath(false)
-    }
-    updateTreeWithLocation()
-  }
-
-  const updateTreeWithLocation = () => {
-    const subroutes = location.pathname.split("/")
-    if(fileTree !== undefined){
-      let tree = fileTree
-      subroutes.forEach((path) => {
-        if(path !== ""){
-          tree = tree[path]
-        }
-      })
-      if(tree === undefined){
-        setIsValidPath(false)
-      } else {
-        setIsValidPath(true)
-        setCurrentChildren(tree)
-        setIsFolderSet(Object.keys(Object.values(tree)[0]).length > 0)
+    let tree = result
+    subroutes.forEach((path) => {
+      if(path !== ""){
+        tree = tree[path]
       }
+    })
+    if(tree === undefined){
+      setIsValidPath(false)
+    } else {
+      setIsValidPath(true)
+      setCurrentChildren(tree)
+      setIsFolderSet(Object.keys(Object.values(tree)[0]).length > 0)
     }
+
+    setLoading(false)
   }
 
-  useEffect(() => {
-    getAllObjects()
-  }, [])
+  // useEffect(() => {
+  //   getAllObjects()
+  // }, [])
 
   useEffect(() => {
     updateTreeWithLocation()
-  }, [location, fileTree])
+  }, [location])
 
   useEffect(() => {
     let body = document.getElementsByClassName("home-page-outer")[0]
@@ -74,8 +73,8 @@ export default function Home(){
   if(isValidPath){
     return(
       <div className="color-default fit-page relative-position flex-container-column home-page-outer">
-        <Header />
-        { fileTree !== undefined ? (
+        <Header setLoading={setLoading}/>
+        { !loading ? (
           isFolderSet ? (
             <div className="content-page flex-container-row center folder-page">
               <FolderPage
