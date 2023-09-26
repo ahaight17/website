@@ -37,7 +37,6 @@ export default function Home(){
         return r[name]
       }, result)
     })
-    // console.log(result)
 
     let tree = result
     subroutes.forEach((path) => {
@@ -55,10 +54,6 @@ export default function Home(){
 
     setLoading(false)
   }
-
-  // useEffect(() => {
-  //   getAllObjects()
-  // }, [])
 
   useEffect(() => {
     updateTreeWithLocation()
