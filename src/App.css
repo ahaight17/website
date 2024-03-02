@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Hackbot';
-  src: url('/src/fonts/hackbot.otf') format('opentype');
-}
-
 :root{
   --color1: #BBBDF6;
   --color2: #F9CB40;

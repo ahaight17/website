@@ -12,7 +12,7 @@
 
 .footer{
   width: 100%;
-  position: relative;
+  position: absolute;
   bottom: 0;
   min-height: 10vh;
   display: flex;

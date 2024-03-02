@@ -1,4 +1,4 @@
-import folder from 'assets/folder.png'
+import folder from '../../assets/folder.png'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 

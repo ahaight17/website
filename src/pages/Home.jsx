@@ -1,12 +1,12 @@
-import Footer from "components/aesthetic/Footer";
-import { callApiWithEndpoint } from "helper/callApiWithEndpoint";
+import Footer from '../components/aesthetic/Footer';
+import { callApiWithEndpoint } from '../helper/callApiWithEndpoint';
 import { useEffect, useState } from "react";
-import Loading from "components/aesthetic/Loading";
+import Loading from '../components/aesthetic/Loading';
 import { useParams, useLocation } from "react-router-dom";
-import Error from "./Error";
-import FolderPage from "./FolderPage";
-import ImagePage from "./ImagePage";
-import Header from "components/aesthetic/Header";
+import Error from '../pages/Error';
+import FolderPage from '../pages/FolderPage';
+import ImagePage from '../pages/ImagePage';
+import Header from '../components/aesthetic/Header';
 
 export default function Home(){
   const params = useParams()
@@ -56,7 +56,7 @@ export default function Home(){
   }
 
   useEffect(() => {
-    updateTreeWithLocation()
+    // updateTreeWithLocation()
   }, [location])
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom"
-import folder from 'assets/folder.png'
+import folder from '../assets/folder.png'
 
 export default function FolderPage(props){
     const navigate = useNavigate()
@@ -23,6 +23,7 @@ export default function FolderPage(props){
         Object.keys(props.currentChildren).map((objectName) => (
         <div className="content-box">
             <div className="flex-container-row center" onClick={handleFolderClick}>
+              <img className="folder-img img-default" src={folder}/>
               <img className="folder-img img-default" src={folder}/>
               <h1 className="folder-name">{objectName}</h1>
             </div>
