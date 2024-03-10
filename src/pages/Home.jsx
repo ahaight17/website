@@ -15,7 +15,7 @@ export default function Home(){
   const [currentChildren, setCurrentChildren] = useState({})
   const [isValidPath, setIsValidPath] = useState(true)
   const [isFolderSet, setIsFolderSet] = useState(true)
-  const [bodyColor, setBodyColor] = useState(2)
+  const [bodyColor, setBodyColor] = useState(new Date().getMilliseconds()%7)
 
   const updateTreeWithLocation = async () => {
     const subroutes = location.pathname.split("/")
