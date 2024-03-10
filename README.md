@@ -1,3 +1,3 @@
 # Welcome to my website
 
-[www.alexhaight.com](www.alexhaight.com)
+[www.alexhaight.com](https://www.alexhaight.com)
