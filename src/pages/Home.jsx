@@ -15,7 +15,7 @@ export default function Home(){
   const [currentChildren, setCurrentChildren] = useState({})
   const [isValidPath, setIsValidPath] = useState(true)
   const [isFolderSet, setIsFolderSet] = useState(true)
-  const [bodyColor, setBodyColor] = useState(1)
+  const [bodyColor, setBodyColor] = useState(2)
 
   const updateTreeWithLocation = async () => {
     const subroutes = location.pathname.split("/")
@@ -64,6 +64,14 @@ export default function Home(){
     body.style.backgroundColor = `var(--color${bodyColor})`
     setBodyColor(bodyColor === 7 ? 1 : bodyColor+1)
   }, [location])
+
+  useEffect(() => {
+    async function callApi() {
+      const res = await callApiWithEndpoint("/")
+      console.log(res);
+    }
+    callApi()
+  }, [])
 
   if(isValidPath){
     return(

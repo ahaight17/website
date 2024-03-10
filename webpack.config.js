@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -52,6 +53,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       "React": "react",
    }),
+   new Dotenv()
   ],
   devServer: {
     static: path.resolve(__dirname, './dist'),

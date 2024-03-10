@@ -13,7 +13,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "npm run release && webpack-dev-server --open --mode development",
     "clean": "rm -rf dist node_modules",
     "release": "npm run clean && npm install && webpack --mode production"
   },
@@ -39,6 +39,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-react": "^7.23.3",
     "css-loader": "^6.10.0",
+    "dotenv-webpack": "^8.0.1",
     "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "url-loader": "^4.1.1",
