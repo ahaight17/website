@@ -26,8 +26,41 @@
   gap: 10px;
 }
 
-.footer img{
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  opacity: 0.25;
+.header{
+  width: calc(100% - 120px);
+  align-items: center;
+  padding: 30px 60px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container{
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel {
+  width: 40%;
+  height: 40%;
+}
+
+@media only screen and (max-width: 1500px) {
+  /* .header-container {
+    justify-content: center;
+  } */
+
+  .carousel {
+    width: 75%;
+    height: 75%;
+  }
+}
+
+.header p{
+  margin: 0;
+}
+
+.nav-links>a{
+  padding: 25px;
 }

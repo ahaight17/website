@@ -1,33 +1,29 @@
-import folder from '../../assets/folder.png'
-import { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import name from '../../../public/assets/nav/name.png'
+import home from '../../../public/assets/nav/home.png'
+import about from '../../../public/assets/nav/about.png'
+import work from '../../../public/assets/nav/work.png'
 
+import "../aesthetic/aesthetic.css"
 export default function Header(props){
-    const location = useLocation()
-    const navigate = useNavigate()
-    const [showBackButton, setShowBackButton] = useState(false)
-
-    const handleBackButtonClick = () => {
-        props.setLoading(true)
-        var paths = location.pathname.split("/")
-        paths.pop()
-        navigate(paths.join("/"))
-    }
-
-    useEffect(() => {
-        setShowBackButton(location.pathname !== "/")
-    }, [location])
-
-    if (showBackButton) {
-        return (
-            <div className="flex-container-row header" onClick={handleBackButtonClick}>
-                <img className="folder-img img-default" src={folder}/>
-                <p className="folder-name">..</p>
+    return (
+        <div className="flex-container-row header">
+            <div className='header-container flex-container-row'>
+                <Link to={"/"}>
+                    <img src={name} height={"100"}/>
+                </Link>
+                <div className='nav-links flex-container-row'>
+                    <Link to={"/"}>
+                        <img src={home} height={"35"}/>
+                    </Link>
+                    <Link to={"/about"}>
+                        <img src={about} height={"35"}/>
+                    </Link>
+                    <Link to={"/work"}>
+                        <img src={work} height={"35"}/>
+                    </Link>
+                </div>
             </div>
-        )
-    } else {
-        return (
-            <div className="flex-container-row header" />
-        )
-    }
+        </div>
+    )
 }

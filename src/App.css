@@ -2,7 +2,8 @@
   --color1: #BBBDF6;
   --color2: #F9CB40;
   --color3: #70a288;
-  --color4: #8B5D33;
+  --color4: #ffffff;
+  --color8: #8B5D33;
   --color5: #246EB9;
   --color6: #FC7A57;
   --color7: #FBFBFF
@@ -18,26 +19,6 @@ body{
 
 .color-default{
   background-color: var(--color4);
-}
-
-.text-color-1{
-  color: var(--color1);
-}
-
-.text-color-2{
-  color: var(--color2);
-}
-
-.text-color-3{
-  color: var(--color3);
-}
-
-.text-color-4{
-  color: var(--color4);
-}
-
-.text-color-5{
-  color: var(--color5);
 }
 
 .flex-container-row{
@@ -71,6 +52,10 @@ body{
 
 .space-around {
   justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 .relative-position{
@@ -121,16 +106,4 @@ body{
 .folder-page{
   justify-content: space-evenly;
   align-content: center;
-}
-
-.header{
-  justify-content: start;
-  align-items: center;
-  padding: 15px;
-  position: absolute;
-  top: 0;
-}
-
-.header p{
-  margin: 0;
 }

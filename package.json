@@ -10,10 +10,11 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
+    "swiper": "^11.2.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run release && webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --open --mode development",
     "clean": "rm -rf dist node_modules",
     "release": "npm run clean && npm install && webpack --mode production"
   },
