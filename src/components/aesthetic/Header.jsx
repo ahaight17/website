@@ -16,11 +16,11 @@ export default function Header(props){
                     <Link to={"/"}>
                         <img src={home} height={"35"}/>
                     </Link>
-                    <Link to={"/about"}>
-                        <img src={about} height={"35"}/>
-                    </Link>
                     <Link to={"/work"}>
                         <img src={work} height={"35"}/>
+                    </Link>
+                    <Link to={"/about"}>
+                        <img src={about} height={"35"}/>
                     </Link>
                 </div>
             </div>
