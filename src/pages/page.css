@@ -1,0 +1,15 @@
+.about-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 50px;
+    justify-content: space-around;
+}
+
+
+@media only screen and (max-width: 1500px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+}

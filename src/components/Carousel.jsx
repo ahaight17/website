@@ -2,11 +2,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "../components/aesthetic/aesthetic.css"
 
 import 'swiper/css';
+import { CDN_URL } from '../utils/contants';
 
 export default function Carousel() {
     return (
         <div className="content-page center flex-container-row">
-          <img className='carousel' src='https://cdn.alexhaight.com/home/joshua_tree.jpg'/>
+          <img className='landscape-img' src={`${CDN_URL}/home/joshua_tree.jpg`}/>
         </div>
     )
     // return (

@@ -10,7 +10,10 @@
 }
 
 body{
-  font-family: "Hackbot";
+  font-family: "rasa", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: larger;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
@@ -97,10 +100,14 @@ body{
   cursor: pointer;
 }
 
+.content-container {
+  padding: 25px;
+  justify-content: space-between;
+}
+
 .content-page{
   min-height: 90vh;
   flex-wrap: wrap;
-  padding: 40px;
 }
 
 .folder-page{
