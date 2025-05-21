@@ -6,7 +6,7 @@ import "../components/aesthetic/aesthetic.css"
 
 export default function About() {
     return (
-        <div className="color-default fit-page relative-position flex-container-column content-container">
+        <div className="color-default relative-position flex-container-column content-container">
             <Header/>
                 <div className="center about-container">
                     <img className='portrait-img' src={`${CDN_URL}/about/me.png`}/>

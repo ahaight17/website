@@ -12,11 +12,11 @@
 
 .footer{
   width: 100%;
-  bottom: 0;
   min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: end;
+  padding: 20px 0 0 0 !important;
 }
 
 .footer>div{
@@ -26,7 +26,7 @@
 }
 
 .header{
-  width: calc(100% - 120px);
+  width: 95%;
   align-items: center;
   padding: 30px 60px 0px 60px;
   top: 0;
@@ -48,10 +48,14 @@
   width: 25%;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
 @media only screen and (max-width: 1500px) {
-  /* .header-container {
-    justify-content: center;
-  } */
 
   .landscape-img {
     width: 95%;
@@ -61,6 +65,34 @@
   .portrait-img {
     width: 75%;
     height: 75%;
+  }
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: var(--color4);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    z-index: 1001;
+    border-top: 1px solid var(--color1);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
   }
 }
 
@@ -72,13 +104,23 @@
   padding: 25px;
 }
 
-.nav-links .flex-container-column img.hover {
-  opacity: 0;
-  transition: opacity 0.25s;
-  pointer-events: none;
+.flex-container-column img {
+  transition: opacity 0.3s ease;
 }
 
-.nav-links a:hover .hover,
-.nav-links .flex-container-column:hover .hover {
+img.base {
   opacity: 1;
+}
+
+img.hover {
+  opacity: 0;
+}
+
+.flex-container-column img.hover.active, 
+.nav-links a .flex-container-column:hover .hover {
+  opacity: 1;
+}
+
+.flex-container-column img.hover{
+  opacity: 0;
 }

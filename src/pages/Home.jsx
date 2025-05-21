@@ -5,7 +5,7 @@ import Header from '../components/aesthetic/Header';
 
 export default function Home(){
   return(
-    <div className="color-default fit-page relative-position flex-container-column content-container">
+    <div className="color-default relative-position flex-container-column content-container">
       <Header />
       <Carousel />
       <Footer />

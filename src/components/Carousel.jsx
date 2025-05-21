@@ -1,24 +1,33 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import "../components/aesthetic/aesthetic.css"
-
-import 'swiper/css';
+import Slider from "react-slick";
 import { CDN_URL } from '../utils/contants';
 
 export default function Carousel() {
     return (
-        <div className="content-page center flex-container-row">
-          <img className='landscape-img' src={`${CDN_URL}/home/joshua_tree.jpg`}/>
-        </div>
-    )
-    // return (
-    //     <Swiper
-    //         spaceBetween={50}
-    //         slidesPerView={3}
-    //         onSlideChange={() => console.log('slide change')}
-    //         onSwiper={(swiper) => console.log(swiper)}
-    //     >
-    //         <SwiperSlide>Slide 1</SwiperSlide>
-    //         <SwiperSlide>Slide 2</SwiperSlide>
-    //     </Swiper>
-    // );
+      <div>
+        <Slider
+          centerMode
+          dots
+          arrows={false}
+          infinite 
+          speed={500} 
+          slidesToShow={1} 
+          slidesToScroll={1}
+          autoplay
+          swipeToSlide
+          autoplaySpeed={7500}
+          cssEase="linear"
+          className="slider"
+        >
+          <div className="flex-container-row center">
+            <img className="landscape-img" src={`${CDN_URL}/home/joshua_tree.jpg`}/>
+          </div>
+          <div className="flex-container-row center">
+            <img className="landscape-img" src={`${CDN_URL}/home/fire_station.jpg`}/>
+          </div>
+          <div className="flex-container-row center">
+            <img className="landscape-img" src={`${CDN_URL}/home/colonnade.jpg`}/>
+          </div>
+        </Slider>
+      </div>
+    );
 }
