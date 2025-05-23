@@ -46,7 +46,7 @@ export default function Header(props){
                     <img src={name} height={"100"} onHover/>
                 </Link>
                 <div className='hamburger' onClick={() => setMenuOpen(!menuOpen)} ref={hamburgerRef}>
-                    <img src={hamburger} className="base" height={"35"}/>
+                    <img src={hamburger} className="base" height={"50"}/>
                 </div>
                 <div className={`nav-links flex-container-row ${menuOpen ? "open" : ""}`} ref={navRef}>
                     <Link to={"/"}>
