@@ -1,21 +1,22 @@
 import { Link, useLocation } from 'react-router-dom'
-import name from '../../../public/assets/nav/name.png'
-import home from '../../../public/assets/nav/home.png'
-import about from '../../../public/assets/nav/about.png'
-import work from '../../../public/assets/nav/work.png'
-import hover from '../../../public/assets/nav/hover.png'
-import shop from '../../../public/assets/nav/shop.png'
-import hamburger from '../../../public/assets/nav/hamburger.png'
+import React, { FunctionComponent, useEffect, useRef, useState } from 'react'
 
+import name from '../../assets/nav/name.png'
+import home from '../../assets/nav/home.png'
+import about from '../../assets/nav/about.png'
+import work from '../../assets/nav/work.png'
+import hover from '../../assets/nav/hover.png'
+import shop from '../../assets/nav/shop.png'
+import hamburger from '../../assets/nav/hamburger.png'
 import "../aesthetic/aesthetic.css"
-import { useEffect, useRef, useState } from 'react'
-export default function Header(props){
+
+export const Header: FunctionComponent = () =>{
     const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const navRef = useRef();
     const hamburgerRef = useRef();
 
-    const isActive = (path) => location.pathname === path ? "active" : "";
+    const isActive = (path: string) => location.pathname === path ? "active" : "";
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -55,7 +56,7 @@ export default function Header(props){
                             <img src={hover} className={`hover ${isActive("/")}`} height={"35"}/>
                         </div>
                     </Link>
-                    <Link to={"work"}>
+                    <Link to={"/work"}>
                         <div className='flex-container-column'>
                             <img src={work} className="base" height={"35"}/>
                             <img src={hover} className={`hover ${isActive("/work")}`} height={"35"}/>

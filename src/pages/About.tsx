@@ -1,10 +1,10 @@
+import React, { FunctionComponent } from "react";
 import { CDN_URL } from "../utils/contants";
-import Footer from "../components/aesthetic/Footer";
-import Header from "../components/aesthetic/Header"
-
+import { Footer } from "../components/aesthetic/Footer";
+import { Header } from "../components/aesthetic/Header";
 import "../components/aesthetic/aesthetic.css"
 
-export default function About() {
+export const About: FunctionComponent = () => {
     return (
         <div className="color-default relative-position flex-container-column content-container">
             <Header/>

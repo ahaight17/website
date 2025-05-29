@@ -13,3 +13,24 @@
     padding: 0;
   }
 }
+
+.work-wrapper {
+
+}
+
+.work-wrapper > div {
+  padding: 20px;
+}
+
+.work-projects { 
+  flex-grow: 1;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: end;
+  text-decoration: underline;
+}
+
+.project-images {
+  flex-grow: 3;
+
+}

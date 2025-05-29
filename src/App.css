@@ -128,3 +128,7 @@ body{
   display: flex !important;
   width: none !important;
 }
+ .slick-track {
+  display: flex;
+  align-items: center;
+ }

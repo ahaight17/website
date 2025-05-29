@@ -1,7 +1,8 @@
-import Slider from "react-slick";
+import React, { FunctionComponent } from 'react';
 import { CDN_URL } from '../utils/contants';
+import Slider from "react-slick";
 
-export default function Carousel() {
+export const Carousel: FunctionComponent = () => {
     return (
       <div>
         <Slider
@@ -14,15 +15,15 @@ export default function Carousel() {
           slidesToScroll={1}
           autoplay
           swipeToSlide
-          autoplaySpeed={7500}
+          autoplaySpeed={7000}
           cssEase="linear"
           className="slider"
         >
           <div className="flex-container-row center">
-            <img className="landscape-img" src={`${CDN_URL}/home/joshua_tree.jpg`}/>
+            <img className="landscape-img" src={`${CDN_URL}/home/fire_station.jpg`}/>
           </div>
           <div className="flex-container-row center">
-            <img className="landscape-img" src={`${CDN_URL}/home/fire_station.jpg`}/>
+            <img className="landscape-img" src={`${CDN_URL}/home/joshua_tree.jpg`}/>
           </div>
           <div className="flex-container-row center">
             <img className="landscape-img" src={`${CDN_URL}/home/colonnade.jpg`}/>
