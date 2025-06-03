@@ -82,10 +82,10 @@
 
   .nav-links {
     position: absolute;
-    top: 155px; /* adjust based on header height */
+    top: 155px;
     right: 0;
     transform: translateX(-50%) translateY(-10px);
-    flex-direction: column;
+    flex-direction: column !important;
     background-color: var(--color4);
     align-items: center;
     opacity: 0;
@@ -102,7 +102,7 @@
   .nav-links.open {
     opacity: 1;
     visibility: visible;
-    /* transform: translateX(-50%) translateY(0); */
+    flex-direction: column;
     transform: translateY(0);
   }
 

@@ -27,7 +27,7 @@
   font-size: 35px;
   font-weight: 700;
   text-align: end;
-  text-decoration: underline;
+  max-width: 100px;
 }
 
 .project-images {

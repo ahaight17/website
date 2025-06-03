@@ -44,7 +44,7 @@ export const Header: FunctionComponent = () =>{
         <div className="flex-container-row header">
             <div className='header-container flex-container-row'>
                 <Link to={"/"}>
-                    <img src={name} height={"100"} onHover/>
+                    <img src={name} height={"100"}/>
                 </Link>
                 <div className='hamburger' onClick={() => setMenuOpen(!menuOpen)} ref={hamburgerRef}>
                     <img src={hamburger} className="base" height={"50"}/>
