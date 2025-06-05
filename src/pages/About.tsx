@@ -8,10 +8,15 @@ export const About: FunctionComponent = () => {
     return (
         <div className="color-default relative-position flex-container-column content-container">
             <Header/>
-                <div className="center about-container">
+                <div className="about-container">
                     <img className='portrait-img' src={`${CDN_URL}/about/me.png`}/>
-                    <div className="flex-container-column">
-                        <p>Alex Haight is a photographer currently based out of Seattle, WA.</p>
+                    <div className="flex-container-column bio">
+                        <p>
+                            Alex Haight (b. 1998, Virginia) is a photographer based out of Seattle, WA.
+                            <br/>
+                            <br/>
+                            His work is a reflection of his experience of life on Earth.
+                        </p>
                     </div>
                 </div>
             <Footer />

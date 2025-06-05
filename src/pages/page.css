@@ -3,6 +3,7 @@
     flex-direction: row;
     padding: 0px 50px;
     justify-content: space-around;
+    align-items: center;
 }
 
 
@@ -15,22 +16,20 @@
 }
 
 .work-wrapper {
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.work-wrapper > div {
+.bio {
+  max-width: 600px;
+}
+
+/* .work-wrapper > div {
   padding: 20px;
-}
+} */
 
-.work-projects { 
-  flex-grow: 1;
-  font-size: 35px;
-  font-weight: 700;
-  text-align: end;
-  max-width: 100px;
-}
-
-.project-images {
-  flex-grow: 3;
-
+.work-project {
+  align-items: start;
+  /* justify-content: start; */
 }

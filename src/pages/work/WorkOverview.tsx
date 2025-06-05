@@ -1,14 +1,13 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox"
-import { CDN_URL, CustomImage } from "../utils/contants";
-import { Footer } from "../components/aesthetic/Footer";
-import { Header } from "../components/aesthetic/Header";
-import { TREE_STUDY_IMAGES } from "../utils/contants";
-import "../components/aesthetic/aesthetic.css"
-import { fetchImagesStream } from "../helper/getImagesFromApi";
+import { CDN_URL, CustomImage } from "../../utils/contants";
+import { Footer } from "../../components/aesthetic/Footer";
+import { Header } from "../../components/aesthetic/Header";
+import "../../components/aesthetic/aesthetic.css"
+import { fetchImagesStream } from "../../helper/getImagesFromApi";
 
-export const Work: FunctionComponent = () => {
+export const WorkOverview: FunctionComponent = () => {
     const [images, setImages] = useState<CustomImage[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -58,36 +57,13 @@ export const Work: FunctionComponent = () => {
         };
     }, []);
 
-    console.log(images)
-
     return (
         <div className="color-default relative-position flex-container-column content-container">
             <Header/>
                 <div className="flex-container-row full-width work-wrapper">
-                    <div className="flex-container-column work-projects">
-                        <p>Tree Study</p>
-                    </div>
-                    <div className="flex-container-column project-images">
-                        <Gallery 
-                            images={images}
-                            onClick={handleClick}
-                            enableImageSelection={false}
-                        />
-                        {!!currentImage && (
-                            /* @ts-ignore */
-                            <Lightbox
-                                mainSrc={currentImage.original}
-                                imageTitle={currentImage.caption}
-                                mainSrcThumbnail={currentImage.src}
-                                nextSrc={nextImage.original}
-                                nextSrcThumbnail={nextImage.src}
-                                prevSrc={prevImage.original}
-                                prevSrcThumbnail={prevImage.src}
-                                onCloseRequest={handleClose}
-                                onMovePrevRequest={handleMovePrev}
-                                onMoveNextRequest={handleMoveNext}
-                            />
-                        )}
+                    <div className="flex-container column work-project">
+                        <img className="landscape-img" src={`${CDN_URL}/work/tree_study/tree_008.jpg`}/>
+                        <p>Tree Study</p>   
                     </div>
                 </div>
             <Footer />
