@@ -1,16 +1,4 @@
-.vertical-divider{
-  border: 1px solid var(--color1);
-  width: 0px;
-  opacity: 0.5;
-}
-
-.horizontal-divider{
-  border: 1px solid var(--color1);
-  width: 0px;
-  opacity: 0.5;
-}
-
-.footer{
+.footer {
   width: 100%;
   min-height: 10vh;
   display: flex;
@@ -19,13 +7,13 @@
   padding: 20px 0 0 0 !important;
 }
 
-.footer>div{
+.footer>div {
   margin-top: 10px;
   margin-bottom: 10px;
   gap: 10px;
 }
 
-.header{
+.header {
   width: 95%;
   align-items: center;
   padding: 30px 60px 0px 60px;
@@ -33,7 +21,7 @@
   z-index: 1000;
 }
 
-.header-container{
+.header-container {
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -89,7 +77,6 @@
 }
 
 @media only screen and (max-width: 1500px) {
-
   .landscape-img {
     width: 95%;
     height: 95%;
@@ -143,11 +130,11 @@
   }
 }
 
-.header p{
+.header p {
   margin: 0;
 }
 
-.nav-links>a{
+.nav-links>a {
   padding: 25px;
 }
 

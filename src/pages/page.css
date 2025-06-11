@@ -24,12 +24,3 @@
 .bio {
   max-width: 600px;
 }
-
-/* .work-wrapper > div {
-  padding: 20px;
-} */
-
-.work-project {
-  align-items: start;
-  /* justify-content: start; */
-}

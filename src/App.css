@@ -1,4 +1,4 @@
-:root{
+:root {
   --color1: #BBBDF6;
   --color2: #F9CB40;
   --color3: #70a288;
@@ -9,7 +9,7 @@
   --color7: #FBFBFF
 }
 
-body{
+body {
   font-family: "rasa", serif;
   font-weight: 400;
   font-style: normal;
@@ -20,34 +20,34 @@ body{
   margin: 0%;
 }
 
-.color-default{
+.color-default {
   background-color: var(--color4);
 }
 
-.flex-container-row{
+.flex-container-row {
   display: flex;
   flex-direction: row;
 }
 
-.flex-container-column{
+.flex-container-column {
   display: flex;
   flex-direction: column;
 }
 
-.center{
+.center {
   justify-content: center;
   align-items: center;
 }
 
-.full-width{
+.full-width {
   width: 100%;
 }
 
-.full-height{
+.full-height {
   height: 100%;
 }
 
-.fit-page{
+.fit-page {
   min-width: 100vw;
   min-height: 100vh;
   flex-wrap: wrap;
@@ -61,43 +61,19 @@ body{
   justify-content: space-between;
 }
 
-.relative-position{
+.relative-position {
   position: relative;
 }
 
-.img-default{
+.img-default {
   width: auto;
   height: auto;
 }
 
-.product-img{
-  max-height: 22em;
-  padding-bottom: 8px;
-}
-
-.product-title{
-  font-size: small;
-}
-
-.content-box{
+.content-box {
   max-height: 600px;
   padding: 20px;
   display: flex;
-}
-
-.image-page {
-  justify-content: space-around;
-}
-
-.folder-name{
-  text-align: center;
-  font-size: 32px;
-  cursor: pointer;
-}
-
-.folder-img{
-  padding-right: 8px;
-  cursor: pointer;
 }
 
 .content-container {
@@ -110,14 +86,9 @@ body{
   padding-bottom: 20px;
 }
 
-.content-page{
+.content-page {
   min-height: 90vh;
   flex-wrap: wrap;
-}
-
-.folder-page{
-  justify-content: space-evenly;
-  align-content: center;
 }
 
 .slick-slider .slick-list .slick-slide {

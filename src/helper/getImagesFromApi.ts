@@ -1,3 +1,5 @@
+import { CustomImage } from "../utils/contants";
+
 export type ImageItem = {
   key: string;
   url: string;
@@ -33,4 +35,23 @@ export async function* fetchImagesStream(
 
     nextToken = data.nextToken ?? undefined;
   } while (nextToken);
+}
+
+export async function fetchProjectImages(
+    projectName: string,
+    maxPages = 3
+): Promise<CustomImage[]> {
+  const images: CustomImage[] = [];
+
+  for await (const page of fetchImagesStream(`work/${projectName}`, maxPages)) {
+    images.push(
+      ...page.map((p) => ({
+          src: p.url,
+          original: p.url,
+          height: 120,
+          width: 150,
+      }))
+    );
+  }
+  return images;
 }
