@@ -8,6 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./work.css";
 import { Error } from "../../pages/Error";
+import { Header } from "../../components/aesthetic/Header";
+import { Footer } from "../../components/aesthetic/Footer";
 
 export const ProjectGallery = () => {
     const { projectName } = useParams();
@@ -81,31 +83,35 @@ export const ProjectGallery = () => {
     };
 
     return (
-        <div className="project-gallery-wrapper">
-            <div className="project-main-slider" style={{ width: "100%" }}>
-                <Slider {...mainSettings}>
-                    {images.map((img, idx) => (
-                        <div key={idx}>
-                            <img
-                                src={img.src}
-                                alt={`slide-${idx}`}
-                            />
-                        </div>
-                    ))}
-                </Slider>
+         <div className="color-default relative-position flex-container-column content-container">
+            <Header />
+            <div className="project-gallery-wrapper">
+                <div className="project-main-slider" style={{ width: "100%" }}>
+                    <Slider {...mainSettings}>
+                        {images.map((img, idx) => (
+                            <div key={idx}>
+                                <img
+                                    src={img.src}
+                                    alt={`slide-${idx}`}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+                <div className="project-thumb-slider">
+                    <Slider {...thumbSettings}>
+                        {images.map((img, idx) => (
+                            <div key={idx}>
+                                <img
+                                    src={img.src}
+                                    alt={`thumb-${idx}`}
+                                />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
             </div>
-            <div className="project-thumb-slider">
-                <Slider {...thumbSettings}>
-                    {images.map((img, idx) => (
-                        <div key={idx}>
-                            <img
-                                src={img.src}
-                                alt={`thumb-${idx}`}
-                            />
-                        </div>
-                    ))}
-                </Slider>
-            </div>
-        </div>
+            <Footer />
+         </div>
     );
 };
