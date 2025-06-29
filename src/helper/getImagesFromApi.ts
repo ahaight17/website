@@ -12,7 +12,7 @@ type FetchImagesResponse = {
 
 export async function* fetchImagesStream(
   folder: string,
-  limit: number = 20
+  limit: number = 3
 ): AsyncGenerator<ImageItem[]> {
   let nextToken: string | undefined = undefined;
 

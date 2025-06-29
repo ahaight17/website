@@ -1,9 +1,10 @@
-import { Image } from "react-grid-gallery";
-
 export const CDN_URL = "https://cdn.alexhaight.com";
 
-export interface CustomImage extends Image {
+export interface CustomImage {
   original: string;
+  src: string;
+  width: number;
+  height: number;
 }
 
 export const TREE_STUDY_IMAGES: CustomImage[] = [

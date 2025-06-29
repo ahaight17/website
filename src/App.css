@@ -15,7 +15,6 @@ body {
   font-style: normal;
   font-size: larger;
   position: relative;
-  min-height: 100vh;
   overflow-x: hidden;
   margin: 0%;
 }
@@ -71,6 +70,7 @@ body {
 }
 
 .content-box {
+  height: 100%;
   max-height: 600px;
   padding: 20px;
   display: flex;
