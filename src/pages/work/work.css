@@ -79,3 +79,15 @@
   box-shadow: 0 2px 12px rgba(112, 162, 136, 0.15);
   transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
 }
+
+@media (max-width: 1500px) {
+  .project-main-slider .slick-slide img {
+    max-width: 98vw;
+    max-height: 40vh;
+    width: 100%;
+    height: auto;
+  }
+  .project-main-slider {
+    width: 100vw;
+  }
+}
