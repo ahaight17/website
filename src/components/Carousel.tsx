@@ -20,13 +20,19 @@ export const Carousel: FunctionComponent = () => {
           className="slider"
         >
           <div className="flex-container-row center">
+            <img className="landscape-img" src={`${CDN_URL}/home/colonnade.jpg`}/>
+          </div>
+          <div className="flex-container-row center">
+            <img className="landscape-img" src={`${CDN_URL}/home/lichen.jpg`}/>
+          </div>
+          <div className="flex-container-row center">
             <img className="landscape-img" src={`${CDN_URL}/home/fire_station.jpg`}/>
           </div>
           <div className="flex-container-row center">
             <img className="landscape-img" src={`${CDN_URL}/home/joshua_tree.jpg`}/>
           </div>
           <div className="flex-container-row center">
-            <img className="landscape-img" src={`${CDN_URL}/home/colonnade.jpg`}/>
+            <img className="landscape-img" src={`${CDN_URL}/home/lily_pads.jpg`}/>
           </div>
         </Slider>
       </div>
